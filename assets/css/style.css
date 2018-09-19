@@ -1,0 +1,150 @@
+
+body {
+    background: #fff;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 300;
+    text-align: center;
+}
+
+html, body, .coming-soon {
+    min-height: 100vh;
+}
+
+strong { font-weight: 700; }
+
+a, a:hover, a:focus {
+	color: #8BC63F;
+	text-decoration: none;
+    -o-transition: all .3s; -moz-transition: all .3s; -webkit-transition: all .3s; -ms-transition: all .3s; transition: all .3s;
+}
+
+img { max-width: 100%; }
+
+::-moz-selection { background: #8BC63F; color: #fff; text-shadow: none; }
+::selection { background: #8BC63F; color: #fff; text-shadow: none; }
+
+
+/***** Coming Soon *****/
+
+.coming-soon {
+    margin: 0 auto;
+    color: #fff;
+}
+
+.inner-bg {
+    padding: 75px 0 40px 0;
+}
+
+.coming-soon .logo {
+    padding-bottom: 20px;
+    opacity: 0.5;
+}
+
+.coming-soon .logo h1 {
+	margin: 0;
+}
+
+.coming-soon .logo a {
+	display: inline-block;
+	width: 113px;
+	height: 110px;
+	background: url(../img/logo.png) center center no-repeat;
+	text-indent: -99999px;
+}
+.coming-soon .logo a:focus { outline: 0; }
+
+.coming-soon .logo a:before {
+	content: url(../img/logo-hover.png);
+	width: 0;
+	height: 0;
+	visibility: hidden;
+}
+.coming-soon .logo a:hover { background-image: url(../img/logo-hover.png); }
+
+.coming-soon h2 {
+    font-size: 46px;
+    font-weight: 100;
+}
+
+.coming-soon p {
+	margin: 40px 0 10px 0;
+	padding: 0 320px;
+    font-size: 22px;
+    line-height: 36px;
+}
+
+.timer {
+    margin-top: 60px;
+}
+
+.timer .days-wrapper,
+.timer .hours-wrapper,
+.timer .minutes-wrapper,
+.timer .seconds-wrapper {
+    display: inline-block;
+    width: 160px;
+    height: 160px;
+    margin: 0 10px;
+    padding-top: 20px;
+    border: 1px solid #fff;
+    font-size: 18px;
+    -moz-border-radius: 50%; -webkit-border-radius: 50%; border-radius: 50%;
+    cursor: pointer;
+    -o-transition: all .3s; -moz-transition: all .3s; -webkit-transition: all .3s; -ms-transition: all .3s; transition: all .3s;
+}
+
+.timer .days-wrapper:hover,
+.timer .hours-wrapper:hover,
+.timer .minutes-wrapper:hover,
+.timer .seconds-wrapper:hover {
+    background: #8BC63F;
+    border: 1px solid #8BC63F;
+    -o-transition: all .3s; -moz-transition: all .3s; -webkit-transition: all .3s; -ms-transition: all .3s; transition: all .3s;
+}
+
+.timer .days,
+.timer .hours,
+.timer .minutes,
+.timer .seconds {
+    font-size: 80px;
+    font-weight: 100;
+    line-height: 90px;
+}
+
+.coming-soon p.top-arrow {
+	margin-top: 50px;
+	font-size: 36px;
+}
+
+.coming-soon p.top-arrow i {
+	position: relative;
+	width: 100px;
+	height: 37px;
+	overflow: hidden;
+}
+
+.coming-soon p.top-arrow i:before {
+	position: absolute;
+	top: 0;
+	left: 33.5px;
+}
+
+.coming-soon p.top-arrow i:after {
+	content: "scroll down";
+	position: absolute;
+	top: -30px;
+	left: 0;
+	width: 100px;
+	font-family: 'Roboto', sans-serif;
+	font-size: 18px;
+	font-weight: 300;
+}
+
+.coming-soon p.top-arrow i:before, 
+.coming-soon p.top-arrow i:after {
+	-o-transition: all .3s; -moz-transition: all .3s; -webkit-transition: all .3s; -ms-transition: all .3s; transition: all .3s;
+}
+
+.coming-soon p.top-arrow i:hover:before { top: 40px; }
+.coming-soon p.top-arrow i:hover:after { top: 10px; }
+
