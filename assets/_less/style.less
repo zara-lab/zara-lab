@@ -84,6 +84,32 @@ a:focus, .btn.active.focus, .btn.active:focus, .btn.focus, .btn.focus:active, .b
 	}
 }
 
+.btn-gradient
+{
+	
+	background: #f1802b; /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */  
+	border-color: #f1802b; /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */  
+	color:#fff; 
+	font-size: 14px;
+	padding: 10px 20px;
+	border-radius: 0;
+	transition: .3s ease;
+	&:focus,
+	&.focus 
+	{
+	   color:inherit !important;
+	   outline: 0;
+	   box-shadow: none;
+	}
+	&:hover
+	{
+		background: #D56E20;
+	     border-color: #D56E20; /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */  
+		color:#fff;
+		transition: .3s ease;
+	}
+}
+
 .btn-success-flat 
 {
 	background: #6ba53a;
@@ -247,6 +273,17 @@ a:focus, .btn.active.focus, .btn.active:focus, .btn.focus, .btn.focus:active, .b
 	 				font-size: 12px;
 	 				color:#333;
 	 			}
+	 			.signbtn
+	 			{ 
+	 				 color:#FFF;
+	 				 font-weight: bold;
+	 				 font-size: 14px;
+	 				 padding: 5px 16px;
+	 				 margin:5px 0;
+							background: linear-gradient(to bottom, #d92741 0%, #f1802b 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */ 
+							-webkit-background: linear-gradient(to bottom, #d92741 0%, #f1802b 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */ 
+							-moz-background: linear-gradient(to bottom, #d92741 0%, #f1802b 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */  
+	 			}
 	 	}
 	 	.contacts-list
 	 	{
@@ -340,4 +377,21 @@ a:focus, .btn.active.focus, .btn.active:focus, .btn.focus, .btn.focus:active, .b
 	background: linear-gradient(to bottom, #d92741 0%, #f1802b 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */ 
 	-webkit-background: linear-gradient(to bottom, #d92741 0%, #f1802b 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */ 
 	-moz-background: linear-gradient(to bottom, #d92741 0%, #f1802b 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */  
+}
+#subscribe-modal .input-group{
+	 margin-bottom: 15px;
+}
+#subscribe-modal .message.active{
+	 display: block;
+	 opacity: 1;
+	 transition: opacity .2s ease;
+}
+#subscribe-modal .message{
+	 display: none;
+	 margin-top: -10px;
+	 margin-bottom: 5px;
+	 display: block;
+	 font-size: 13px;
+	 opacity: 0;
+	 transition: opacity .2s ease;
 }

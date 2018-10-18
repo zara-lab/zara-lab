@@ -213,3 +213,48 @@ function countdown(selector, dateTimeFormat, showLabels) // new Date("2008-06-27
 
     });
 }
+
+function subscribe(courseId)
+{
+
+    $('#subscribe-modal option[data-id='+courseId+']').prop('selected',  true);
+    $('#subscribe-modal').modal('show');
+    return false;
+}
+
+function submitForm(){
+    var data = $('form').serializeArray();
+    var hasErrors = [];
+    // console.log(data);
+    for (var i = 0; i < data.length; i++) {
+        var obj  = data[i];
+        var type = $("[name="+obj.name+"]").attr('type'); 
+        if( (type == 'text' || type == 'tel' || type == 'email')  && obj.value.length < 5) {
+           $("[name="+obj.name+"]").parent().addClass('has-error'); 
+           $("."+obj.name+"-message").addClass('active'); 
+           hasErrors.push(obj.name);
+        }
+       else if(  type == 'number'  && obj.value.length <= 1) {
+           $("[name="+obj.name+"]").parent().addClass('has-error'); 
+           $("."+obj.name+"-message").addClass('active'); 
+           hasErrors.push(obj.name);
+        }
+        else{
+          $("[name="+obj.name+"]").parent().removeClass('has-error'); 
+          $("."+obj.name+"-message").removeClass('active');   
+           delete hasErrors[obj.name];
+        }
+    }
+    // console.log(hasErrors);
+    if(hasErrors.length==0)
+    { 
+      $.post('https://zaralab.azurewebsites.net/academy', data, function(response){
+             console.log(response); 
+             $('#subscribe-modal').modal('hide');
+             swal("Готово!", "Your imaginary data has been send!", "success");  // success/error 
+      }).fail(function() {
+        swal("Възникна грешка :(", "Опитайте отново или се свържете с нас на email: academy@zaralab.org", "error");
+      })
+    }
+    return false;
+}

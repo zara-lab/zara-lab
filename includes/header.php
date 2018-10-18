@@ -24,6 +24,7 @@
     <link href="assets/css/bootstrap.min.css" rel="stylesheet">
     <link href="assets/css/style.css" rel="stylesheet">
     <link href="assets/css/responsive.css" rel="stylesheet">
+    <link href="assets/plugins/sweetalert/lib/sweet-alert.css" rel="stylesheet">
     <!-- <link href="assets/css/owl.carousel.css" rel="stylesheet"> -->
     <meta name="theme-color" content="#fff">
 
