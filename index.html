@@ -303,6 +303,7 @@
                                               </div>
             
              <br/>
+             <a name="contacts" id="contacts"></a>
              <h2 class="page-title">
                   Контакти
              </h2>
@@ -351,6 +352,12 @@
     </div>
 
   <footer id="main-footer">
+  	  <div class="container">
+	  	  	 <ul class="links-inline">
+		  	 		<li><a href="/gdpr/">Форма за забравяне</a></li>
+		  	 		<li><a href="./privacy.html">Политика за поверителност</a></li> 
+	  	  	 </ul>
+  	  </div>
       <p class="text-center">
          <a href="//webstar.bg/?ref=zaralab.org" target="_blank" class="webstar-logo vtkpw">
            <img src="assets/img/webstar-logo.svg" class="img-responsive" alt="">
@@ -358,6 +365,21 @@
       </p>
   </footer>
  
+
+<div id="cookie_script" style="background: rgba(0,0,0,.75); display: none; padding: 15px 0; color:#fff; font-size: 13px;position: fixed;bottom:0;width: 100%;left:0;right:0;z-index: 176000021">
+    <div class="container" style="/*width:1000px; margin:0 auto;*/">
+       <p class="hidden-xs"><strong>Този сайт използва "бисквитки"</strong></p> 
+      <p>С цел подобряване на качеството на нашите услуги използваме бисквитки, включително и външни такива (напр.Google, Facebook и др.). За повече информация прочетете нашата политика за поверителност, там ще намерите също информация как може да управлявате и да изключите бисквитките. Продължавайки да използвате нашия Уебсайт вие се съгласявате на Вашето устройство да бъдат запазени бисквитки.</p>
+      <div style="text-align: right;"> 
+        <a href="./privacy.html" class="btn button read" style="border:0;display: inline-block;text-shadow:none;color:#fff;background: #333;padding: 5px 15px; margin-right: 10px;">Политика на поверителност</a> 
+        <a href="javascript:;" class="btn accept hidden-xs" onclick="AgreeToTermsCokies()" style="margin:5px 0; border:0;display: inline-block;text-shadow:none;color:#ffff;background: #6EAA49; padding: 5px 15px;text-align:center;">Съгласявам се и продължавам да използвам сайта</a>
+        <a href="javascript:;" class="btn accept visible-xs" onclick="AgreeToTermsCokies()" style="margin:5px 0; border:0;display: inline-block;text-shadow:none;color:#ffff;background: #6EAA49; padding: 5px 15px;text-align:center;">Съгласявам се</a>
+      </div>
+    </div>
+</div>
+
+
+
   <div class="modal fade" id="subscribe-modal">
     <div class="modal-dialog">
       <div class="modal-content">
@@ -438,6 +460,12 @@
                   </label>
                 </div>
               </div>
+              <div class="checkbox">
+                <label>
+                  <input type="checkbox" name="terms" value="true" required="">
+                  Съгласен съм с <a href="./privacy.html" target="_blank">условията за поверителност на www.ZaraLab.org</a>, съобразени с Регламент (ЕС) 2016/679.
+                </label>
+              </div>
               
               <!-- <button type="button" class="btn btn-default" data-dismiss="modal">Отказ</button> -->
             <button type="submit" onclick="return submitForm()" class="btn btn-large btn-gradient">Запиши се сега!</button>
@@ -459,6 +487,41 @@
     </script>
     <script src="assets/js/front.js"></script>
       
+<script type="text/javascript">
+  (function() {
+     if( !getCookie('agree_cookies') || getCookie('agree_cookies') !='1' ) 
+     {
+      $('#cookie_script').fadeIn();
+     }
+  })();
+  function AgreeToTermsCokies()
+  {
+    setCookie('agree_cookies','1', 15);
+    $('#cookie_script').fadeOut().remove();
+  }
+  function setCookie(name,value,days) {
+        var expires = "";
+        if (days) {
+            var date = new Date();
+            date.setTime(date.getTime() + (days*24*60*60*1000));
+            expires = "; expires=" + date.toUTCString();
+        }
+        document.cookie = name + "=" + (value || "")  + expires + "; path=/";
+    }
+    function getCookie(name) {
+        var nameEQ = name + "=";
+        var ca = document.cookie.split(';');
+        for(var i=0;i < ca.length;i++) {
+            var c = ca[i];
+            while (c.charAt(0)==' ') c = c.substring(1,c.length);
+            if (c.indexOf(nameEQ) == 0) return c.substring(nameEQ.length,c.length);
+        }
+        return null;
+    }
+    function eraseCookie(name) {   
+        document.cookie = name+'=; Max-Age=-99999999;';  
+    }
+</script>
       <script type="text/javascript">
    
         // countdown('.the-timer', "2018-10-15 10:00:00"); 
